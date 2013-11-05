@@ -34,7 +34,7 @@ end
 # missing_char("kittie", 1) => "kttie"
 # missing_char(347, 1) => RuntimeError: Please enter a string!
 def missing_char(str, pos)
-  str.gsub!(/"#{pos}"/, '')
+  str.gsub!(str[pos], '')
 end
 
 # Question 4: a function called near_hundred
