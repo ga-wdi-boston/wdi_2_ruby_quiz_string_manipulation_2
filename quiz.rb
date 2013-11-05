@@ -11,7 +11,12 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(day)
+	if day >= 6
+		return true
+	else
+		return false
+	end
 end
 
 # Question 2: a function called del_del
@@ -19,7 +24,9 @@ end
 # Remove "del" from a string.
 # del_del("abdelcd") => "abcd"
 # del_del("xyz") => "xyz"
-
+def del_del(string)
+	string.delete "del"
+end
 # Question 3: a function called missing_char
 #############
 # Remove the character that corresponds to the index from the string.
