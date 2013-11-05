@@ -11,9 +11,44 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(options)
+  if Date.today.to_s == 'Saturday' || Date.today.to_s == 'Sunday'
+    return true
+  elsif 'vacation: true'
+    return true
+  else
+    return false
+  end
 end
 
+def del(string)
+  newstring = string.gsub('del', '')
+  return newstring
+end
+
+def missing_char(string, index)
+  if string.class != String || index.to_i != Integer
+    return "error"
+  else
+    return string.slice!(index.to_i)
+  end
+end
+
+def near_hundred(number)
+  if number.class != Integer
+    return "RuntimeError: Please enter a string!"
+  elsif number.to_i > 89 && number.to_i < 100
+    return true
+  else 
+    return false
+  end
+end
+
+def back_around(string)
+  last = string[string.length - 1]
+  new_string =  string.chop
+  return "#{last} + #{new_string}"
+end
 # Question 2: a function called del_del
 #############
 # Remove "del" from a string.

@@ -38,6 +38,13 @@ end
   # del_del("abdelcd") => "abcd"
   # del_del("xyz") => "xyz"
 
+describe "del" do
+  it "returns the string without the 'del' in it" do
+    expect{del('abdelcd')}.to be('abcd')
+    expect{del('xyz')}.to be('xyz')
+  end
+end
+
 # Question 3: a function called missingChar
   # Example Usage:
   # missing_char("kittie", 1) => "kttie"
