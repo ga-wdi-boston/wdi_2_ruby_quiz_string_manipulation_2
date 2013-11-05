@@ -16,33 +16,30 @@ def sleep_in?(options = {})
   day.saturday? || day.sunday? || (options[:vacation] == true)
 end
 
-def del(string)
-  newstring = string.gsub('del', '')
-  return newstring
+def del_del(string)
+  string.gsub(/del/, '')
 end
 
 def missing_char(string, index)
   if string.class != String || index.to_i != Integer
-    return "error"
+    raise "Please enter a string followed by an integer"
   else
-    return string.slice!(index.to_i)
+    string.sub(string.slice(index.to_i, ""))
   end
 end
 
 def near_hundred(number)
   if number.class != Integer
-    return "RuntimeError: Please enter a string!"
-  elsif number.to_i > 89 && number.to_i < 100
-    return true
+    raise "Please enter a string!"
   else 
-    return false
+    number.between?(90, 99) 
   end
 end
 
 def back_around(string)
   last = string[string.length - 1]
   new_string =  string.chop
-  return "#{last} + #{new_string}"
+  "#{last} + #{new_string}"
 end
 # Question 2: a function called del_del
 #############
