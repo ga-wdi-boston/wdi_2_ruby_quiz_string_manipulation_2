@@ -11,7 +11,15 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(day)
+  if (day == 'Saturday' || day == 'Sunday')
+    return true
+  elsif day == 'Monday' || day == 'Tuesday' || day == 'Wednesday' || day == 'Thursday' || day == 'Friday'
+    return false
+  else 
+    'please enter a valid date'
+  end
+
 end
 
 # Question 2: a function called del_del
@@ -19,6 +27,9 @@ end
 # Remove "del" from a string.
 # del_del("abdelcd") => "abcd"
 # del_del("xyz") => "xyz"
+def del_del(string)
+  string.gsub(/[del]/, '');
+end
 
 # Question 3: a function called missing_char
 #############
@@ -26,6 +37,8 @@ end
 # If you don't enter a string
 # missing_char("kittie", 1) => "kttie"
 # missing_char(347, 1) => RuntimeError: Please enter a string!
+def missing_char(my_string)
+end
 
 # Question 4: a function called near_hundred
 #############
@@ -35,9 +48,16 @@ end
 # near_hundred(93) => true
 # near_hundred(52) => false
 # near_hundred('two') => RuntimeError: Please enter a number!
+def near_hundred(my_number)
+end
 
 # Question 5: a method called back_around
 #############
 # Given a string, move the last character to the beginning.
 # "cat".back_around => "tca"
 # "hello".back_around => "ohell"
+
+def back_around(my_string)
+  len = my_string.length
+  my_string.index[len]
+end
