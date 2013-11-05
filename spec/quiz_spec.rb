@@ -32,11 +32,33 @@ describe "near_hundred" do
   it "throws an error if we pass it a string" do
     expect{near_hundred("5")}.to raise_error
   end
+  it "returns false when number not between 90-99" do
+    expect(near_hundred(84)).to eq(false)
+  end
+  it "returns false when number not between 90-99" do
+    expect(near_hundred(94)).to eq(true)
+  end
 end
 # Question 2: a function called del_del
   # Example Usage:
   # del_del("abdelcd") => "abcd"
   # del_del("xyz") => "xyz"
+
+describe "del_del" do
+  it "returns the string without the 'del' in it" do
+    expect(del_del("abdelcd")).to eq("abcd")
+    expect(del_del("xyz")).to eq("xyz")
+  end
+end
+
+describe "missing_char" do
+  it "returns a string without the character in the index position told in the function" do
+  expect(missing_char('kittie', 1)).to be('kttie')
+  end
+  it "raise an error if the value is not a string"
+    expect{near_hundred("5")}.to raise_error
+end
+end
 
 # Question 3: a function called missingChar
   # Example Usage:
