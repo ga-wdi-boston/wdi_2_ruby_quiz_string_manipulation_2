@@ -11,7 +11,17 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(options)
+  options || options{vacation: false}
+  day = Date.new(2001,2,3).cwday
+  return if day == 6 || day == 6 || options[:vacation]
+end
+
+def del_del(string)
+  return string.gsub(/del/, '')
+end
+
+def missing_char
 end
 
 # Question 2: a function called del_del
@@ -41,3 +51,4 @@ end
 # Given a string, move the last character to the beginning.
 # "cat".back_around => "tca"
 # "hello".back_around => "ohell"
+end
