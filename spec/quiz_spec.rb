@@ -28,16 +28,25 @@ end
 
 # Write the next tests yourself!
 # See quiz.rb for more details
-describe "near_hundred" do
-  it "throws an error if we pass it a string" do
-    expect{near_hundred("5")}.to raise_error
-  end
-end
+
 # Question 2: a function called del_del
   # Example Usage:
-  # del_del("abdelcd") => "abcd"
+  # del_del("abdelcd") => "abcd" 
   # del_del("xyz") => "xyz"
+describe "question 2: a function called del_del"
 
+  it "returns abcd when passed abcdel" do
+    question2 = del_del("abdelcd")
+    expect(question2).to be("abcd")
+  end
+
+  it "returns xyz when passed xyz" do
+    question2 = del_del("xyz")
+    expect(question2)to be("xyz")
+  end 
+
+
+end
 # Question 3: a function called missingChar
   # Example Usage:
   # missing_char("kittie", 1) => "kttie"
@@ -49,6 +58,11 @@ end
   # 93.near_hundred? => true
   # near_hundred(52) => false
   # near_hundred('two') => RuntimeError: Please enter a number!
+  describe "near_hundred" do
+  it "throws an error if we pass it a string" do
+    expect{near_hundred("5")}.to raise_error
+  end
+end
 
 # Question 5: a method called back_around
   # Example Usage:
