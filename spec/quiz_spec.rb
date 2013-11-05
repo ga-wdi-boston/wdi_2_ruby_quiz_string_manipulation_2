@@ -32,7 +32,18 @@ describe "near_hundred" do
   it "throws an error if we pass it a string" do
     expect{near_hundred("5")}.to raise_error
   end
+
+  it "should return true if number is between 90 and 99" do 
+    expect{near_hundred("91")}.to eq(true)
+  end
+
+  it "should return false if number is below 90" do 
+    expect{near_hundred("80")}.to eq(false)
+  end
+
 end
+
+
 # Question 2: a function called del_del
   # Example Usage:
   # del_del("abdelcd") => "abcd"
