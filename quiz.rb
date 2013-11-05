@@ -11,14 +11,9 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?(options)
-  if Date.today.to_s == 'Saturday' || Date.today.to_s == 'Sunday'
-    return true
-  elsif 'vacation: true'
-    return true
-  else
-    return false
-  end
+def sleep_in?(options = {})
+  day = Time.now
+  day.saturday? || day.sunday? || (options[:vacation] == true)
 end
 
 def del(string)

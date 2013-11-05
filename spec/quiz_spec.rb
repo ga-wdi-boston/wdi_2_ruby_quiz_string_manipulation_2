@@ -45,6 +45,13 @@ describe "del" do
   end
 end
 
+describe "missing_char" do
+  it "returns a string without the character in the index position told in the function" do
+  expect{missing_char('kittie', 1)}.to be('kttie')
+  expect{}
+end
+end
+
 # Question 3: a function called missingChar
   # Example Usage:
   # missing_char("kittie", 1) => "kttie"
