@@ -1,3 +1,5 @@
+require 'pry'
+
 # .___________. __    __   __       _______.    __       _______.        ___           ______      __    __   __   ________
 # |           ||  |  |  | |  |     /       |   |  |     /       |       /   \         /  __  \    |  |  |  | |  | |       /
 # `---|  |----`|  |__|  | |  |    |   (----`   |  |    |   (----`      /  ^  \       |  |  |  |   |  |  |  | |  | `---/  /
@@ -11,7 +13,18 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(options = {vacation: false})
+	vacaction = options[:vacation]
+	day = Date.today.strftime('%u')
+	if ((day == 6 || 7) || (vacation == true))
+		return true
+	else
+		return false
+	end
+end
+
+def del_del(string)
+	string.delete("del")
 end
 
 # Question 2: a function called del_del

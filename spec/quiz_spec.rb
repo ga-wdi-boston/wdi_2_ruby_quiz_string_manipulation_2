@@ -26,6 +26,14 @@ describe "question 1: a function called sleep_in?" do
   end
 end
 
+describe "question 2: a function called del del" do
+
+  it "returns a string without del" do
+    # assuming you're answering this on a weekday!
+    expect(del_del('delaware')).to be('aware')
+  end
+end
+
 # Write the next tests yourself!
 # See quiz.rb for more details
 describe "near_hundred" do
