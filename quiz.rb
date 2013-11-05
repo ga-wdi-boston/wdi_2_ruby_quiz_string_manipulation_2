@@ -12,10 +12,13 @@
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
 def sleep_in?(options)
-	if options = (vaction: true)
-		return true
-	elsif 
-		return false
+  if Date.today.to_s == 'Saturday' || Date.today.to_s == 'Sunday'
+    return true
+  elsif 'vacation: true'
+    return true
+  else
+    return false
+  end
 end
 
 # Question 2: a function called del_del
