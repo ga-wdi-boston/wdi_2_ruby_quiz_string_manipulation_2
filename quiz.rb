@@ -11,7 +11,13 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(options: {})
+	t = Time.new
+	if (t.monday? == true) || (t.tuesday? == true) || (t.wednesday? == true) || (t.thursday? == true) || (t.friday? == true)
+		return false
+	elsif (t.saturday? == true) || (t.sunday? == true) || (options = {vacation: true})
+		return true
+	end  
 end
 
 # Question 2: a function called del_del
@@ -19,6 +25,10 @@ end
 # Remove "del" from a string.
 # del_del("abdelcd") => "abcd"
 # del_del("xyz") => "xyz"
+
+def del_del(string)
+
+end
 
 # Question 3: a function called missing_char
 #############
