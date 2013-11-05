@@ -30,8 +30,19 @@ end
 # See quiz.rb for more details
 describe "near_hundred" do
   it "throws an error if we pass it a string" do
-    expect{near_hundred("5")}.to raise_error
+    expect(near_hundred("5")).to raise_error
   end
+  it'returns true if the number is between 90 and 99' do
+    expect(near_hundred(99)).to be(true)
+  end 
+
+  it'returns false if the number is not between 90 and 99' do
+    expect(near_hundred(89)).to be(false)
+  end 
+
+  it'returns and error when given a non-number' do 
+    expect(near_hundred("89")).to throw(new Error("Please enter a number!")
+  end  
 end
 # Question 2: a function called del_del
   # Example Usage:

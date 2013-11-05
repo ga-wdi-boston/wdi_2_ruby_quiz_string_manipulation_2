@@ -11,8 +11,15 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(options)
+	options || (options = {vacation: true})
+	if options == "Sunday" || "Sunday"
+		return false
+	else 
+		return true
+	end 
 end
+
 
 # Question 2: a function called del_del
 #############
@@ -35,6 +42,15 @@ end
 # near_hundred(93) => true
 # near_hundred(52) => false
 # near_hundred('two') => RuntimeError: Please enter a number!
+
+def near_hundred(number)
+ if(number.class === "string" ) {
+   return (number <= 99 && number >= 90);
+        } else {
+throw new Error("Please enter a number!");
+        };
+}
+end 
 
 # Question 5: a method called back_around
 #############
