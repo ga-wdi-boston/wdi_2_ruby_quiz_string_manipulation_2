@@ -1,3 +1,4 @@
+
 # .___________. __    __   __       _______.    __       _______.        ___           ______      __    __   __   ________
 # |           ||  |  |  | |  |     /       |   |  |     /       |       /   \         /  __  \    |  |  |  | |  | |       /
 # `---|  |----`|  |__|  | |  |    |   (----`   |  |    |   (----`      /  ^  \       |  |  |  |   |  |  |  | |  | `---/  /
@@ -12,10 +13,15 @@
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
 def sleep_in?
+today = Date.today
+if today.Saturday? || today.Sunday?
+	sleep_in = true
+else 
+	sleep_in = false
 end
 
 # Question 2: a function called del_del
-#############
+# ############
 # Remove "del" from a string.
 # del_del("abdelcd") => "abcd"
 # del_del("xyz") => "xyz"
