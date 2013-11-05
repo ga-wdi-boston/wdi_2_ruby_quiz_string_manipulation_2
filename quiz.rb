@@ -11,7 +11,15 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(options)
+  options || (options={vacation: true})
+  day = Date.new
+  today = day.wday
+  if options == "vacation: true"
+    return true
+  else
+    return false
+  end
 end
 
 # Question 2: a function called del_del
@@ -19,6 +27,18 @@ end
 # Remove "del" from a string.
 # del_del("abdelcd") => "abcd"
 # del_del("xyz") => "xyz"
+
+def near_hundred(number)
+  if number <= 99 && number >= 90
+    return true
+  elsif number < 90
+    return false
+  else raise 'That is not a number'
+  end
+end
+
+def del_del(words)
+end
 
 # Question 3: a function called missing_char
 #############
