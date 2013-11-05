@@ -11,8 +11,21 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(options=nil)
+  if options{'vacation: true'} #|| options.wday == 0 || options.wday == 6 
+  	return true
+  else
+  	return false
+  end
 end
+
+# quiz.sleepIn = function(options) {
+# 	options || (options = {vacation: false});
+# 	var day = new Date();
+# 	day = day.getDay();
+# 	return (day === 0 || day === 6 || options.vacation);
+#   // quiz.sleepIn({vacation: true}) => true;
+# };
 
 # Question 2: a function called del_del
 #############
