@@ -11,7 +11,9 @@
 # You can sleep in if it is not a weekday or if you are on vacation.
 # sleep_in? => false
 # sleep_in?(vacation: true) => true
-def sleep_in?
+def sleep_in?(options = {})
+	day = Time.now
+	day.saturday? || day.sunday? || (options[:vacation] == true)
 end
 
 # Question 2: a function called del_del
@@ -19,6 +21,9 @@ end
 # Remove "del" from a string.
 # del_del("abdelcd") => "abcd"
 # del_del("xyz") => "xyz"
+def del_del(string)
+	string.gsub(/del/, '')
+end
 
 # Question 3: a function called missing_char
 #############
@@ -26,6 +31,14 @@ end
 # If you don't enter a string
 # missing_char("kittie", 1) => "kttie"
 # missing_char(347, 1) => RuntimeError: Please enter a string!
+def missing_char(string, index)
+	if string.is_a? String
+		string.sub(string.slice(index.to_i), '')
+	else
+		raise "Please enter a number"
+	end
+end
+
 
 # Question 4: a function called near_hundred
 #############
@@ -35,9 +48,24 @@ end
 # near_hundred(93) => true
 # near_hundred(52) => false
 # near_hundred('two') => RuntimeError: Please enter a number!
+def near_hundred(number)
+	if number.is_a? Integer
+		number.between?(90, 99)
+	else
+		raise "Please enter a number!"
+	end
+end
+
 
 # Question 5: a method called back_around
 #############
 # Given a string, move the last character to the beginning.
 # "cat".back_around => "tca"
 # "hello".back_around => "ohell"
+
+def back_around(string)
+	word_array = string.split('')
+	word_array.unshift(word_array.pop).join
+	# messier alternative below
+	#string.split('').values_at(-1, 0..-2).join
+end
